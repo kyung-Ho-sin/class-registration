@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+
+<mapper namespace="paymapper">
+
+	<!-- class_offline series  -->
+	<select id="payalllist" resultType="map">
+		select * from pay_ledger
+			
+	</select>
+
+	<select id="payallcnt" resultType="map">
+		select count(1) as cnt from pay_ledger
+			
+	</select>
+
+	<select id="payselectno" resultType="map">
+		select * from pay_ledger where class_no = #{param1}
+			
+	</select>
+	
+	
+
+	<!-- mail_id series  -->
+	<select id="offpayselectid" resultType="map" parameterType="map">
+		select 
+			ledger_no,
+			mail_id,
+			pay_amount,
+			off.class_no,
+			class_name,
+			class_type,
+			month,
+			approval_yn,
+			use_yn,
+			off.create_dt
+		from class_offline off, pay_ledger pay
+		where off.class_no = pay.class_no
+		and mail_id = #{param1}
+			
+	</select>
+	
+	<select id="paycntselectid" resultType="map">
+		select count(1) as cnt from pay_ledger where mail_id = #{param1}
+			
+	</select>
+
+
+</mapper>

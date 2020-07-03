@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+
+<mapper namespace="com.steveleejava.user.login.dao.LoginDao">
+
+    <select id="getUserInfo" parameterType="com.steveleejava.user.login.UserDto" resultType="com.steveleejava.user.login.UserDto">
+			SELECT
+				MAIL_ID AS mailId,
+				PW AS pw,
+				TYPE AS TYPE,
+				ADDR AS addr,
+				SN7 AS sn7,
+				PHONE_NUM AS phoneNum,
+				USE_YN AS useYn,
+				CREATE_DT AS createDt,
+				CREATE_ID AS createId,
+				UPDATE_DT AS updateDt,
+				UPDATE_ID AS updateId
+			FROM
+				USR_USER
+			WHERE 1=1
+			AND MAIL_ID = #{mailId}
+			AND PW = #{pw}
+    </select>
+</mapper>

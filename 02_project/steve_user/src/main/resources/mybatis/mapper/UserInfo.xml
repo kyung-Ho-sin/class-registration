@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+
+<mapper namespace="userinfo">
+
+<!-- 	<select id="useralllist" resultType="map"> -->
+<!-- 		select * from usr_user -->
+			
+<!-- 	</select> -->
+
+<!-- 	<select id="userselect" resultType="map"> -->
+<!-- 		select * from usr_user where mail_id = #{param1} -->
+			
+<!-- 	</select> -->
+	
+<!-- 	<select id="userchkselect" resultType="map"> -->
+<!-- 		select count(1) as cnt from usr_user where mail_id = #{email_id} and pw = #{pw} -->
+			
+<!-- 	</select> -->
+	
+<!-- 	<select id="userchkmapselect" resultType="map" > -->
+<!-- 		select count(1) as cnt from usr_user where mail_id = #{param1} and pw = #{param2} -->
+			
+<!-- 	</select> -->
+	
+<!-- 	<select id="userchkmapstringselect" resultType="map" > -->
+<!-- 		select count(1) as cnt from usr_user where mail_id = #{email_id} and pw = #{pw} -->
+			
+<!-- 	</select> -->
+	
+<!-- 	<select id="userchkdtoselect" resultType="map" parameterType="com.steveleejava.user.UserDto"> -->
+<!-- 		select count(1) as cnt from usr_user where mail_id = #{email_id} and pw = #{pw} -->
+			
+<!-- 	</select>	 -->
+
+</mapper>

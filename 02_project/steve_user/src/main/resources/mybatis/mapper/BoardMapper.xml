@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Board">
+  
+<select id="selectAll" resultType="map">
+  select * from board;
+</select>
+
+<select id="selectFront" resultType="map">
+	SELECT * FROM board WHERE TYPE = "f" AND approval_yn = "y" AND use_yn = "y";
+</select>
+<!-- back -->
+<select id="selectBack" resultType="map">
+	SELECT * FROM board WHERE TYPE = "b" AND approval_yn = "y" AND use_yn = "y";
+</select>
+
+<!-- 게시판 클릭 --> 
+<select id="boardClick" resultType="map" parameterType="map">
+	select * from board where board_no = #{board_no}
+</select>
+
+<update id="deleteBoard" parameterType="map">
+	update board set use_yn = "n" where board_no = #{board_no}
+</update>
+
+<update id="updateBoard" parameterType="map">
+	update board set use_yn = "n" where board_no = #{board_no}
+</update>
+
+<insert id="insertBoard" parameterType="map">
+	INSERT INTO board(title, contents, mail_id, type,approval_yn, use_yn, create_id, create_dt, update_id, update_dt)
+	values(#{title}, #{contents}, #{mail_id}, #{approval_yn}, #{type},#{use_yn}, #{create_id}, #{create_dt}, #{update_id}, #{update_dt})
+</insert>
+
+</mapper>

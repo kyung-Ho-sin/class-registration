@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+
+<mapper namespace="offclassmapper">
+
+	<!-- class_offline series  -->
+	<select id="offalllist" resultType="map">
+		select * from class_offline
+			
+	</select>
+
+	<select id="offallcnt" resultType="map">
+		select count(1) as cnt from class_offline
+			
+	</select>
+
+	<select id="offselectno" resultType="map">
+		select * from class_offline where class_no = #{param1}
+			
+	</select>
+	
+
+
+
+
+</mapper>
